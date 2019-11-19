@@ -21,5 +21,8 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::get('posts'          , ['as' => 'admin.posts.index' , 'uses' => 'AdminPostsController@index']);
     Route::get('posts/create'   , ['as' => 'admin.posts.create', 'uses' => 'AdminPostsController@create']);
+
+    Route::post('posts',['as'=>'admin.posts.store','uses'=> 'AdminPostsController@store']);
+
     Route::get('posts/{id}/edit', ['as' => 'admin.posts.edit'  , 'uses' => 'AdminPostsController@edit']);
 });
